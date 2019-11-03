@@ -13,8 +13,8 @@
   var Validation = App.Validation;
   var CheckList = App.CheckList;
 
-  // var myTruck = new Truck('ncc-1701', new DataStore());
-  var myTruck = new Truck('ncc-1701', new RemoteDataStore(SERVER_URL));
+  var myTruck = new Truck('ncc-1701', new DataStore());
+  //var myTruck = new Truck('ncc-1701', new RemoteDataStore(SERVER_URL));
   window.myTruck = myTruck;
   var checkList = new CheckList(CHECKLIST_SELECTR);
   checkList.addClickHandler(myTruck.deliverOrder.bind(myTruck));
@@ -40,5 +40,7 @@
   console.log(formHandler);
 
   formHandler.addInputHandler(Validation.isCompanyEmail);
+
+  myTruck.printOrders(checkList.addRow.bind(checkList));
 
 })(window);

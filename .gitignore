@@ -1,2 +1,4 @@
 .idea/
 .tern-project
+.babelrc
+node_modules/
